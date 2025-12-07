@@ -1,9 +1,0 @@
-name = "subscription"
-compatibility_date = "2025-01-15"
-
-pages_build_output_dir = "dist"
-
-[[d1_databases]]
-binding = "DB"
-database_name = "subscription-db"
-database_id = "937d2c22-43c7-4fbf-9f54-44b38deecdcf"
