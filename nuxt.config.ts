@@ -24,6 +24,15 @@ export default defineNuxtConfig({
     compatibilityDate: '2025-01-15'
   },
 
+   cloudflare: {
+    pages: {
+      assets: {
+        binding: 'PUBLIC_ASSETS' // <— any name except "ASSETS"
+      }
+    }
+  },
+
+
   content: {
     experimental: {
       sqliteConnector: 'native'
