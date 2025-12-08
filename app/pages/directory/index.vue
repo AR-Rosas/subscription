@@ -58,9 +58,13 @@ onMounted(() => {
     return
   }
 
-  if (localStorage.getItem(ACCESS_STORAGE_KEY) === 'true') {
-    hasUnlockedDirectory.value = true
-  }
+  // Auto-unlock for testing (form disabled)
+  hasUnlockedDirectory.value = true
+  localStorage.setItem(ACCESS_STORAGE_KEY, 'true')
+  
+  // if (localStorage.getItem(ACCESS_STORAGE_KEY) === 'true') {
+  //   hasUnlockedDirectory.value = true
+  // }
 })
 
 const posts = computed<DirectoryPost[]>(() => {
