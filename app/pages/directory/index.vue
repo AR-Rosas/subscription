@@ -35,20 +35,22 @@ const enableAccess = () => {
 }
 
 const openTallyForm = () => {
-  if (import.meta.client && window.Tally) {
-    window.Tally.openPopup('xXVMRk', {
-      layout: 'modal',
-      width: 700,
-      emoji: {
-        text: '👋',
-        animation: 'wave'
-      },
-      onSubmit: (payload: any) => {
-        console.log('Form submitted:', payload)
-        enableAccess()
-      }
-    })
-  }
+  // Form disabled - auto-unlock for now
+  enableAccess()
+  // if (import.meta.client && window.Tally) {
+  //   window.Tally.openPopup('xXVMRk', {
+  //     layout: 'modal',
+  //     width: 700,
+  //     emoji: {
+  //       text: '👋',
+  //       animation: 'wave'
+  //     },
+  //     onSubmit: (payload: any) => {
+  //       console.log('Form submitted:', payload)
+  //       enableAccess()
+  //     }
+  //   })
+  // }
 }
 
 onMounted(() => {
@@ -68,23 +70,16 @@ const posts = computed<DirectoryPost[]>(() => {
     .sort((a, b) => a.title.localeCompare(b.title))
 })
 
-const columns = [
-  {
-    key: 'title',
-    label: 'Category',
-    sortable: true
-  },
-  {
-    key: 'description',
-    label: 'Description',
-    sortable: false
-  },
-  {
-    key: 'actions',
-    label: '',
-    sortable: false
-  }
-]
+const columns = [{
+  key: 'title',
+  label: 'Category'
+}, {
+  key: 'description',
+  label: 'Description'
+}, {
+  key: 'actions',
+  label: ''
+}] as const
 
 useHead({
   script: [
@@ -119,42 +114,26 @@ useSeoMeta({
     </div>
 
     <UTable
-      :columns="columns"
+      :columns="columns as any"
       :rows="posts"
-      :ui="{
-        th: {
-          base: 'text-left',
-          padding: 'px-3 py-3.5',
-          color: 'text-muted',
-          font: 'font-semibold',
-          size: 'text-sm'
-        },
-        td: {
-          base: 'whitespace-normal',
-          padding: 'px-3 py-4',
-          color: 'text-foreground',
-          font: '',
-          size: 'text-sm'
-        },
-        tbody: 'divide-y divide-border'
-      }"
+      sort-mode="manual"
     >
       <template #title-data="{ row }">
         <ULink
-          :to="`/directory/${row.slug}`"
+          :to="`/directory/${(row as any).slug}`"
           class="font-medium hover:text-primary transition-colors"
         >
-          {{ row.title }}
+          {{ (row as any).title }}
         </ULink>
       </template>
 
       <template #description-data="{ row }">
-        <span class="text-muted line-clamp-2">{{ row.description }}</span>
+        <span class="text-muted line-clamp-2">{{ (row as any).description }}</span>
       </template>
 
       <template #actions-data="{ row }">
         <ULink
-          :to="`/directory/${row.slug}`"
+          :to="`/directory/${(row as any).slug}`"
           class="flex items-center gap-1 text-muted hover:text-primary transition-colors"
         >
           <span class="text-xs hidden sm:inline">View</span>

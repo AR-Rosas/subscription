@@ -18,9 +18,7 @@ export default defineNuxtConfig({
     }
   },
 
-    hub: {
-    // your hub configuration
-  },
+
 
   devtools: {
     enabled: true
