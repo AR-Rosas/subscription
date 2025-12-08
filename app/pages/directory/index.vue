@@ -68,6 +68,24 @@ const posts = computed<DirectoryPost[]>(() => {
     .sort((a, b) => a.title.localeCompare(b.title))
 })
 
+const columns = [
+  {
+    key: 'title',
+    label: 'Category',
+    sortable: true
+  },
+  {
+    key: 'description',
+    label: 'Description',
+    sortable: false
+  },
+  {
+    key: 'actions',
+    label: '',
+    sortable: false
+  }
+]
+
 useHead({
   script: [
     {
@@ -76,27 +94,74 @@ useHead({
     }
   ]
 })
+
+useSeoMeta({
+  title: 'Free Tools Directory - 200+ Curated Resources',
+  description: 'Explore our curated collection of 200+ free tools for developers, students, freelancers, and small businesses. Organized into 17+ categories.'
+})
 </script>
 
 <template>
-  <UContainer v-if="hasUnlockedDirectory" class="py-4 md:py-6 space-y-4">
+  <UContainer v-if="hasUnlockedDirectory" class="py-4 md:py-6 space-y-6">
     <div class="text-center space-y-3 mb-8">
       <div class="flex items-center justify-center gap-3">
         <UIcon name="i-lucide-compass" class="w-6 h-6 text-primary" />
-        <h1 class="text-2xl md:text-3xl font-bold">Free Tools Directory</h1>
-        <UBadge color="primary" variant="soft" size="md">Unlocked</UBadge>
+        <h1 class="text-2xl md:text-3xl font-bold">
+          Free Tools Directory
+        </h1>
+        <UBadge color="primary" variant="soft" size="md">
+          Unlocked
+        </UBadge>
       </div>
-      <p class="text-sm md:text-base text-muted max-w-xl mx-auto">Explore our curated collection of 200+ free tools. Click any category to discover resources.</p>
+      <p class="text-sm md:text-base text-muted max-w-xl mx-auto">
+        Explore our curated collection of 200+ free tools. Click any category to discover resources.
+      </p>
     </div>
-    <ul class="divide-y divide-border rounded-lg border bg-background shadow-sm">
-      <li v-for="post in posts" :key="post.slug" class="group hover:bg-muted/30 transition-colors">
-        <ULink :to="`/directory/${post.slug}`" class="flex items-center p-3 gap-2 hover:bg-primary/5 transition">
-          <h2 class="text-xs font-medium flex-1 truncate group-hover:text-primary">{{ post.title }}</h2>
-          <p class="hidden sm:block text-xs text-muted flex-2 truncate">{{ post.description }}</p>
-          <UIcon name="i-lucide-arrow-right" class="text-muted group-hover:text-primary transition text-sm" />
+
+    <UTable
+      :columns="columns"
+      :rows="posts"
+      :ui="{
+        th: {
+          base: 'text-left',
+          padding: 'px-3 py-3.5',
+          color: 'text-muted',
+          font: 'font-semibold',
+          size: 'text-sm'
+        },
+        td: {
+          base: 'whitespace-normal',
+          padding: 'px-3 py-4',
+          color: 'text-foreground',
+          font: '',
+          size: 'text-sm'
+        },
+        tbody: 'divide-y divide-border'
+      }"
+    >
+      <template #title-data="{ row }">
+        <ULink
+          :to="`/directory/${row.slug}`"
+          class="font-medium hover:text-primary transition-colors"
+        >
+          {{ row.title }}
         </ULink>
-      </li>
-    </ul>
+      </template>
+
+      <template #description-data="{ row }">
+        <span class="text-muted line-clamp-2">{{ row.description }}</span>
+      </template>
+
+      <template #actions-data="{ row }">
+        <ULink
+          :to="`/directory/${row.slug}`"
+          class="flex items-center gap-1 text-muted hover:text-primary transition-colors"
+        >
+          <span class="text-xs hidden sm:inline">View</span>
+          <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+        </ULink>
+      </template>
+    </UTable>
   </UContainer>
 
   <UContainer v-else class="py-10 md:py-16">
@@ -112,15 +177,21 @@ useHead({
         </div>
 
         <div class="space-y-3">
-          <UBadge color="primary" variant="soft" size="lg">Trade a Link</UBadge>
-          <h1 class="text-3xl md:text-4xl font-bold">Unlock the Free Tools Directory</h1>
+          <UBadge color="primary" variant="soft" size="lg">
+            Trade a Link
+          </UBadge>
+          <h1 class="text-3xl md:text-4xl font-bold">
+            Unlock the Free Tools Directory
+          </h1>
           <p class="text-base md:text-lg text-muted max-w-xl mx-auto">
             Share your favorite free tool and we'll unlock the full Tradealink directory plus lifetime updates.
           </p>
         </div>
 
         <div class="bg-muted/20 rounded-lg p-6 space-y-3">
-          <p class="font-semibold">What you'll get:</p>
+          <p class="font-semibold">
+            What you'll get:
+          </p>
           <div class="grid md:grid-cols-2 gap-3 text-left">
             <div class="flex items-start gap-2">
               <UIcon name="i-lucide-check-circle" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
@@ -152,7 +223,9 @@ useHead({
           >
             Share a Tool to Unlock
           </UButton>
-          <p class="text-xs text-muted mt-3">Takes less than 1 minute • Instant unlock</p>
+          <p class="text-xs text-muted mt-3">
+            Takes less than 1 minute • Instant unlock
+          </p>
         </div>
       </div>
     </UCard>
