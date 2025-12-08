@@ -1,0 +1,26 @@
+# Wrangler configuration for Cloudflare Pages
+# https://developers.cloudflare.com/pages/functions/wrangler-configuration/
+
+name = "tradealink"
+compatibility_date = "2025-01-15"
+pages_build_output_dir = "dist"
+
+# Cloudflare Pages configuration
+[site]
+bucket = "./dist"
+
+# Build configuration (optional - Cloudflare will auto-detect Nuxt)
+# If using Cloudflare Pages Git integration, these are handled in the dashboard
+# If deploying via CLI, these ensure correct build setup
+[build]
+command = "pnpm install && pnpm build"
+cwd = "."
+
+# Environment variables (add in Cloudflare dashboard for sensitive values)
+# [env.production]
+# [env.production.vars]
+# NUXT_PUBLIC_SITE_URL = "https://yourdomain.com"
+
+# [env.preview]
+# [env.preview.vars]
+# NUXT_PUBLIC_SITE_URL = "https://preview.yourdomain.com"
