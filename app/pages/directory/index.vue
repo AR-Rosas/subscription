@@ -56,19 +56,20 @@ onMounted(() => {
   console.log('Directory posts:', posts.value)
 })
 
-const columns = [{
-  id: 'title',
-  key: 'title',
-  label: 'Category'
-}, {
-  id: 'description',
-  key: 'description',
-  label: 'Description'
-}, {
-  id: 'actions',
-  key: 'actions',
-  label: ''
-}] as const
+const columns = [
+  {
+    accessorKey: 'title',
+    header: 'Category'
+  },
+  {
+    accessorKey: 'description',
+    header: 'Description'
+  },
+  {
+    id: 'actions',
+    header: ''
+  }
+]
 
 useHead({
   script: [
@@ -102,34 +103,34 @@ useSeoMeta({
       </p>
     </div>
 
-    <UTable
-      :columns="columns as any"
-      :rows="posts"
-      sort-mode="manual"
-    >
-      <template #title-data="{ row }">
-        <ULink
-          :to="`/directory/${(row as any).slug}`"
-          class="font-medium hover:text-primary transition-colors"
-        >
-          {{ (row as any).title }}
-        </ULink>
-      </template>
-
-      <template #description-data="{ row }">
-        <span class="text-muted line-clamp-2">{{ (row as any).description }}</span>
-      </template>
-
-      <template #actions-data="{ row }">
-        <ULink
-          :to="`/directory/${(row as any).slug}`"
-          class="flex items-center gap-1 text-muted hover:text-primary transition-colors"
+    <div class="space-y-4">
+      <div
+        v-for="post in posts"
+        :key="post.slug"
+        class="flex items-center justify-between p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-primary transition-colors"
+      >
+        <div class="flex-1 min-w-0 pr-4">
+          <NuxtLink
+            :to="`/directory/${post.slug}`"
+            class="block group"
+          >
+            <h3 class="font-medium group-hover:text-primary transition-colors">
+              {{ post.title }}
+            </h3>
+            <p class="text-sm text-muted line-clamp-2 mt-1">
+              {{ post.description }}
+            </p>
+          </NuxtLink>
+        </div>
+        <NuxtLink
+          :to="`/directory/${post.slug}`"
+          class="flex items-center gap-1 text-muted hover:text-primary transition-colors shrink-0"
         >
           <span class="text-xs hidden sm:inline">View</span>
           <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
-        </ULink>
-      </template>
-    </UTable>
+        </NuxtLink>
+      </div>
+    </div>
   </UContainer>
 
   <UContainer v-else class="py-10 md:py-16">
