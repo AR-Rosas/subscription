@@ -7,7 +7,7 @@ Tradealink offers professional business services at a fixed $1,500 price point. 
 ## Key Features
 
 - Fixed-price professional services: $1,500 per service (delivery time depends on complexity, typically 2+ weeks)
-- Quick diagnostic service: $29 Systems Diagnostic delivered in 24-72 hours
+- Quick research service: $29 Internet Research Service delivered in 24–72 hours
 - 16+ professional services including workflow automation, CRM setup, AI integration, data systems, and more
 - Tally popup for intake with Whop checkout integration
 - Lifetime vault access included with every $1,500 service (agency templates, SOPs, tools, themes, wiki)
@@ -38,25 +38,24 @@ All services include complete deliverables, documentation, and lifetime vault ac
 - Productivity System Setup for CEOs & Teams
 - Reporting + Document Automation Service
 
-### Quick Diagnostic ($29)
+### Internet Research Service ($29)
 
-**Systems Diagnostic Report** - Delivered in 24-72 hours
+Delivered in 24–72 hours
 
-A fast, expert-led evaluation of your operations, tools, and workflows. Perfect if you're not ready for a full $1,500 system but still want expert clarity.
+A focused internet research service that gathers, verifies, and organizes useful information about a person, business, product, or topic. Perfect if you’re not ready for a full $1,500 system but still want fast, useful insights.
 
 Includes:
-- Operations Maturity Score (0-100)
-- Your top 3 bottlenecks
-- Missing automations
-- CRM & workflow gaps
-- Recommended tech stack
-- Time savings estimate
-- Priority action plan for your business
+- Verified sources and citations
+- Key findings summary
+- Profiles or company overview (as applicable)
+- Competitors or related alternatives overview
+- Organized notes and links
+- Practical recommendations and next steps
 
 ## Features
 
 - Professional Services: 16+ business services from workflow automation to CRM setup at $1,500 flat
-- Quick Diagnostic: $29 Systems Diagnostic delivered in 24-72 hours for fast insights
+- Quick Research: $29 Internet Research Service delivered in 24–72 hours for fast insights
 - Smooth Scroll: "Describe Your Service" scrolls to pricing for quicker conversion
 - Tally Intake: Popup with Whop checkout integration (service booking: `q45GQg`, diagnostic: `jaeo4J`)
 - Vault Access: Every $1,500 service includes lifetime access to agency templates, SOPs, automation scripts, tools, themes, and internal wiki
@@ -95,12 +94,12 @@ pnpm preview
 4. **Service Delivery**: Receive complete deliverables with documentation (timeline depends on service complexity, typically 2+ weeks)
 5. **Vault Access**: Get lifetime access to our agency vault containing templates, SOPs, automation scripts, tools, themes, and internal wiki
 
-### Quick Diagnostic ($29)
+### Internet Research Service ($29)
 
-1. **Order Diagnostic**: Click "Get Your $29 Systems Diagnostic" button on the landing page
-2. **Submit via Tally**: Provide basic information about your business and current systems
+1. **Order Research**: Click "Get $29 Internet Research Service" on the landing page
+2. **Submit via Tally**: Provide the topic, person, business, or product to research
 3. **Fast Checkout**: Pay $29 via Whop checkout
-4. **Receive Report**: Get your comprehensive diagnostic report within 24-72 hours including maturity score, bottlenecks, and action plan
+4. **Receive Findings**: Get organized research within 24–72 hours including verified sources, summaries, links, and recommendations
 
 ### Free Tools Directory
 

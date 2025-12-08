@@ -98,6 +98,24 @@ useSeoMeta({
           Unlocked
         </UBadge>
       </div>
+
+      <!-- Added $29 Whop CTA -->
+      <div class="flex items-center justify-center gap-3 mt-4">
+        <a
+          href="https://whop.com/tradealink/systems-diagnostic-report/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="no-underline"
+        >
+          <UButton color="primary" size="sm">
+            Get Internet Research Service - $29
+          </UButton>
+        </a>
+      </div>
+      <p class="text-xs text-muted max-w-2xl mx-auto">
+        Focused internet research delivered in 24–72 hours — we gather, verify, and organize useful information about a person, business, product, or topic.
+      </p>
+
       <p class="text-sm md:text-base text-muted max-w-xl mx-auto">
         Explore our curated collection of 200+ free tools. Click any category to discover resources.
       </p>

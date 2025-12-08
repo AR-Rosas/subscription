@@ -34,17 +34,17 @@ sections:
       - title: Ship Fast with Hand-off
         description: Deliverables + access to our internal resources for future work.
   quickWin:
-    title: Need Something Fast? Get a Quick Win for Just $29
-    description: A fast, actionable diagnostic that reveals exactly where your business systems are slowing you down. Delivered within 24–72 hours.
+    title: Need Research Fast? Get Internet Research for $29
+    description: A focused internet research service that gathers, verifies, and organizes useful information about a person, business, product, or topic. Delivered within 24–72 hours.
     features:
-      - Operations Maturity Score (0–100)
-      - Your top 3 bottlenecks
-      - Missing automations
-      - CRM & workflow gaps
-      - Recommended tech stack
-      - Time savings estimate
-      - Priority action plan for your business
-    blurb: "Perfect if you're not ready for a full $1,500 system—but still want expert clarity fast."
+      - Verified sources and citations
+      - Key findings summary
+      - Relevant links and assets
+      - Contact, company, or product profile (as applicable)
+      - Competitors or alternatives overview (optional)
+      - Organized notes in a shareable doc
+      - Next-step recommendations
+    blurb: "Perfect if you're not ready for a full $1,500 engagement — but want fast, reliable insights."
     price: "$29"
     tallyFormId: jaeo4J
   pricing:

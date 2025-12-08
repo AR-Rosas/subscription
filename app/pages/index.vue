@@ -42,13 +42,13 @@ const openOrderPopup = () => {
   })
 }
 
-const openDiagnosticPopup = () => {
+const openResearchPopup = () => {
   if (!import.meta.client || !window.Tally) return
 
   window.Tally.openPopup('jaeo4J', {
     layout: 'modal',
     width: 700,
-    emoji: { text: '⚡', animation: 'wave' },
+    emoji: { text: '🔎', animation: 'wave' },
     onSubmit: () => {
       window.location.href = 'https://whop.com'
     }
@@ -95,7 +95,7 @@ useHead({
           <UBadge color="success" variant="soft" size="md">2+ Weeks (It Depends)</UBadge>
         </div>
         <p class="text-sm text-center text-muted mt-4">
-          Looking for a quick win? Try our <span class="text-primary font-medium">$29 Systems Diagnostic</span>, delivered in 24–72 hours.
+          Need quick research? Try our <span class="text-primary font-medium">$29 Internet Research Service</span>. We deeply search, verify, and organize useful information about a person, business, product, or topic — delivered fast.
         </p>
       </template>
     </UPageHero>
@@ -263,9 +263,9 @@ useHead({
                   size="xl"
                   icon="i-lucide-zap"
                   trailing
-                  @click="openDiagnosticPopup"
+                  @click="openResearchPopup"
                 >
-                  Get Your $29 Systems Diagnostic
+                  Get $29 Internet Research
                 </UButton>
                 <p class="text-xs text-center text-muted mt-3">Delivered within 24–72 hours • No subscription required</p>
               </div>
@@ -561,20 +561,20 @@ useHead({
         </UCard>
       </UPageSection>
 
-      <!-- Footer CTA for $29 Diagnostic -->
+      <!-- Footer CTA for $29 Internet Research -->
       <UPageSection>
         <div class="max-w-2xl mx-auto">
           <UCard class="bg-gradient-to-r from-primary/10 to-green-500/10 border-primary/20">
             <div class="text-center space-y-4">
               <h3 class="text-2xl font-bold">Not Ready for a Full System Yet?</h3>
-              <p class="text-muted">Start with a <span class="font-semibold text-foreground">$29 Systems Diagnostic</span> and get a clear snapshot of your operations within 24–72 hours.</p>
+              <p class="text-muted">Start with a <span class="font-semibold text-foreground">$29 Internet Research Service</span> — deep internet research to gather, verify, and organize useful information.</p>
               <UButton
                 color="primary"
                 size="lg"
                 variant="soft"
-                @click="openDiagnosticPopup"
+                @click="openResearchPopup"
               >
-                Get the $29 Diagnostic
+                Get $29 Research Service
               </UButton>
             </div>
           </UCard>
