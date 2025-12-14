@@ -99,7 +99,7 @@ useSeoMeta({
         </UBadge>
       </div>
 
-      <!-- Added $29 Whop CTA -->
+      <!-- Added $39 Whop CTA -->
       <div class="flex items-center justify-center gap-3 mt-4">
         <a
           href="https://whop.com/tradealink/systems-diagnostic-report/"
@@ -108,7 +108,7 @@ useSeoMeta({
           class="no-underline"
         >
           <UButton color="primary" size="sm">
-            Get Internet Research Service - $29
+            Get Internet Research Service - $39
           </UButton>
         </a>
       </div>

@@ -7,7 +7,7 @@ Tradealink offers professional business services at a fixed $1,500 price point. 
 ## Key Features
 
 - Fixed-price professional services: $1,500 per service (delivery time depends on complexity, typically 2+ weeks)
-- Quick research service: $29 Internet Research Service delivered in 24–72 hours
+- Quick research service: $39 Internet Research Service delivered in 24–72 hours
 - 16+ professional services including workflow automation, CRM setup, AI integration, data systems, and more
 - Tally popup for intake with Whop checkout integration
 - Lifetime vault access included with every $1,500 service (agency templates, SOPs, tools, themes, wiki)
@@ -38,7 +38,7 @@ All services include complete deliverables, documentation, and lifetime vault ac
 - Productivity System Setup for CEOs & Teams
 - Reporting + Document Automation Service
 
-### Internet Research Service ($29)
+### Internet Research Service ($39)
 
 Delivered in 24–72 hours
 
@@ -55,7 +55,7 @@ Includes:
 ## Features
 
 - Professional Services: 16+ business services from workflow automation to CRM setup at $1,500 flat
-- Quick Research: $29 Internet Research Service delivered in 24–72 hours for fast insights
+- Quick Research: $39 Internet Research Service delivered in 24–72 hours for fast insights
 - Smooth Scroll: "Describe Your Service" scrolls to pricing for quicker conversion
 - Tally Intake: Popup with Whop checkout integration (service booking: `q45GQg`, diagnostic: `jaeo4J`)
 - Vault Access: Every $1,500 service includes lifetime access to agency templates, SOPs, automation scripts, tools, themes, and internal wiki
@@ -94,11 +94,11 @@ pnpm preview
 4. **Service Delivery**: Receive complete deliverables with documentation (timeline depends on service complexity, typically 2+ weeks)
 5. **Vault Access**: Get lifetime access to our agency vault containing templates, SOPs, automation scripts, tools, themes, and internal wiki
 
-### Internet Research Service ($29)
+### Internet Research Service ($39)
 
-1. **Order Research**: Click "Get $29 Internet Research Service" on the landing page
+1. **Order Research**: Click "Get $39 Internet Research Service" on the landing page
 2. **Submit via Tally**: Provide the topic, person, business, or product to research
-3. **Fast Checkout**: Pay $29 via Whop checkout
+3. **Fast Checkout**: Pay $39 via Whop checkout
 4. **Receive Findings**: Get organized research within 24–72 hours including verified sources, summaries, links, and recommendations
 
 ### Free Tools Directory
@@ -277,13 +277,13 @@ tags: [Design, UI]
 - Located at `app/pages/index.vue`
 - "Describe Your Service" scrolls to pricing section
 - Lists 16+ professional services at $1,500 each
-- Features $29 Systems Diagnostic as a quick-win option (positioned strategically after "How It Works")
+- Features $39 Systems Diagnostic as a quick-win option (positioned strategically after "How It Works")
 - Multiple Tally popups for different offerings:
   - Premium Service Booking: `q45GQg`
   - Systems Diagnostic: `jaeo4J`
 - The Tally embed script is injected with `useHead`; `window.Tally` is typed in TypeScript
 - Content driven by `content/pages/index.md` with YAML frontmatter for easy updates
-- Strategic placement of $29 service:
+- Strategic placement of $39 service:
   1. Soft mention under hero (not a primary CTA)
   2. Dedicated section after "How It Works" (primary placement)
   3. Footer CTA before FAQ section
@@ -502,10 +502,10 @@ routeRules: {
 ### Tally + Whop Integration Notes
 
 - **Premium Service Booking** (`app/pages/index.vue`): Tally popup opens with `window.Tally.openPopup('q45GQg', { onSubmit: () => window.location.href = 'https://whop.com' })`. The Tally embed script is injected via `useHead`
-- **Systems Diagnostic** (`app/pages/index.vue`): Tally popup opens with `window.Tally.openPopup('jaeo4J', { onSubmit: () => window.location.href = 'https://whop.com' })` for the $29 quick diagnostic service
+- **Systems Diagnostic** (`app/pages/index.vue`): Tally popup opens with `window.Tally.openPopup('jaeo4J', { onSubmit: () => window.location.href = 'https://whop.com' })` for the $39 quick diagnostic service
 - **Directory Unlock** (`app/pages/directory/index.vue`): Popup `xXVMRk` unlocks access by setting localStorage key `tradealink-directory-unlocked`. UI state reflects unlock with `useState('directory-unlocked')` and sorted listing from `queryCollection('directory').all()`
 - All premium service purchases ($1,500) are processed through Whop
-- All diagnostic purchases ($29) are processed through Whop
+- All diagnostic purchases ($39) are processed through Whop
 - Vault access is granted automatically via Whop after premium service purchase
 
 ---

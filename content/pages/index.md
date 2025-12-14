@@ -34,7 +34,7 @@ sections:
       - title: Ship Fast with Hand-off
         description: Deliverables + access to our internal resources for future work.
   quickWin:
-    title: Need Research Fast? Get Internet Research for $29
+    title: Need Research Fast? Get Internet Research for $39
     description: A focused internet research service that gathers, verifies, and organizes useful information about a person, business, product, or topic. Delivered within 24–72 hours.
     features:
       - Verified sources and citations
@@ -45,7 +45,7 @@ sections:
       - Organized notes in a shareable doc
       - Next-step recommendations
     blurb: "Perfect if you're not ready for a full $1,500 engagement — but want fast, reliable insights."
-    price: "$29"
+    price: "$39"
     tallyFormId: jaeo4J
   pricing:
     title: Simple Pricing — Choose or Describe What You Need

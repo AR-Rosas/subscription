@@ -1,7 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-
-
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
@@ -9,6 +7,18 @@ export default defineNuxtConfig({
     'nuxt-studio',
     '@nuxt/hints'
   ],
+
+  devtools: {
+    enabled: true
+  },
+
+  css: ['~/assets/css/main.css'],
+
+  content: {
+    experimental: {
+      sqliteConnector: 'native'
+    }
+  },
 
   ui: {
     // Enable automatic component detection for tree-shaking
@@ -18,13 +28,16 @@ export default defineNuxtConfig({
     }
   },
 
-
-
-  devtools: {
-    enabled: true
+  routeRules: {
+    '/': { prerender: true },
+    '/services': { prerender: true },
+    '/pages': { redirect: '/' },
+    '/template': { prerender: true },
+    '/blog': { prerender: true },
+    '/blog/**': { prerender: true }
   },
 
-  css: ['~/assets/css/main.css'],
+  compatibilityDate: '2025-01-15',
 
   nitro: {
     // Target Cloudflare Pages preset for zero-config deployment on Cloudflare
@@ -38,28 +51,6 @@ export default defineNuxtConfig({
   },
 
   debug: true,
-
-
-
-  content: {
-    experimental: {
-      sqliteConnector: 'native'
-    }
-  },
-
-  routeRules: {
-    '/': { prerender: true },
-    '/services': { prerender: true },
-    '/pages': { redirect: '/' },
-    '/directory': { prerender: true },
-    '/directory/**': { prerender: true },
-    '/template': { prerender: true },
-    '/blog': { prerender: true },
-    '/blog/**': { prerender: true }
-
-  },
-
-  compatibilityDate: '2025-01-15',
 
   eslint: {
     config: {

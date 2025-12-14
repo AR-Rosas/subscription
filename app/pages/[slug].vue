@@ -78,7 +78,7 @@ useSeoMeta({
 <template>
   <UContainer v-if="category" class="py-10 md:py-16 space-y-10">
     <div class="flex items-center gap-2 text-sm">
-      <ULink to="/directory" class="text-muted hover:text-primary transition-colors flex items-center gap-1">
+      <ULink to="/" class="text-muted hover:text-primary transition-colors flex items-center gap-1">
         <UIcon name="i-lucide-arrow-left" class="w-4 h-4" />
         <span>Directory</span>
       </ULink>
