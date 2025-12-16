@@ -1,3 +1,5 @@
+/// <reference types="node" />
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -5,7 +7,8 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     'nuxt-studio',
-    '@nuxt/hints'
+    '@nuxt/hints',
+    'nuxt-auth-utils'
   ],
 
   devtools: {
@@ -28,12 +31,38 @@ export default defineNuxtConfig({
     }
   },
 
+  runtimeConfig: {
+    internal: {
+      // GitHub login that is allowed to access /internal (case-insensitive)
+      // Set via NUXT_INTERNAL_GITHUB_LOGIN in .env / hosting provider env vars.
+      githubLogin: process.env.NUXT_INTERNAL_GITHUB_LOGIN || '',
+
+      // GitHub logins that are allowed to access /internal (case-insensitive)
+      // Set via NUXT_INTERNAL_GITHUB_LOGINS as a comma-separated list.
+      githubLogins: (process.env.NUXT_INTERNAL_GITHUB_LOGINS || '')
+        .split(',')
+        .map(s => s.trim().toLowerCase())
+        .filter(Boolean)
+    },
+
+    public: {
+      // Public mirror of the allow-list for client-side route middleware.
+      // NOTE: This is not a secret (it only contains GitHub usernames).
+      internalGithubAllowlist: (process.env.NUXT_INTERNAL_GITHUB_LOGINS || '')
+        .split(',')
+        .map(s => s.trim().toLowerCase())
+        .filter(Boolean)
+    }
+  },
+
   routeRules: {
     '/': { prerender: true },
     '/services': { prerender: true },
     '/build': { prerender: true },
     '/concierge': { redirect: { to: '/build', statusCode: 301 } },
     '/concierge/**': { redirect: { to: '/build', statusCode: 301 } },
+    // Internal tools should never be pre-rendered.
+    '/internal/**': { prerender: false },
     '/products': { prerender: true },
     '/pages': { redirect: '/' },
 
