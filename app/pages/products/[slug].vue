@@ -4,6 +4,7 @@ interface ProductPage {
   title: string
   description: string
   price: string
+  comingSoon?: boolean
   purchaseUrl?: string
   image?: string
   tags?: string[]
@@ -77,6 +78,14 @@ useSeoMeta({
             <UBadge color="neutral" variant="outline" size="lg">
               {{ product?.price }}
             </UBadge>
+            <UBadge
+              v-if="product?.comingSoon"
+              color="neutral"
+              variant="outline"
+              size="lg"
+            >
+              Coming soon
+            </UBadge>
           </div>
 
           <h1 class="text-3xl md:text-5xl font-bold">
@@ -102,7 +111,7 @@ useSeoMeta({
 
         <div class="flex flex-wrap items-center gap-3">
           <UButton
-            v-if="product?.purchaseUrl"
+            v-if="product?.purchaseUrl && !product?.comingSoon"
             :to="product.purchaseUrl"
             target="_blank"
             rel="noopener"
@@ -113,12 +122,22 @@ useSeoMeta({
             Get it
           </UButton>
           <UButton
+            v-else-if="product?.comingSoon"
+            disabled
+            color="neutral"
+            variant="outline"
+            size="md"
+            icon="i-lucide-clock"
+          >
+            Coming soon
+          </UButton>
+          <UButton
             to="/#pricing"
             color="neutral"
             variant="outline"
             size="md"
           >
-            Or ask me to pick for you
+            Request early access
           </UButton>
         </div>
       </div>

@@ -4,6 +4,7 @@ interface ProductItem {
   title: string
   description: string
   price: string
+  comingSoon?: boolean
   purchaseUrl?: string
   image?: string
   tags?: string[]
@@ -93,9 +94,19 @@ useSeoMeta({
                   <NuxtLink :to="`/products/${product.slug}`" class="font-semibold leading-tight truncate hover:underline">
                     {{ product.title }}
                   </NuxtLink>
-                  <p class="text-sm text-muted truncate">
-                    {{ product.price }}
-                  </p>
+                  <div class="mt-1 flex flex-wrap items-center gap-2">
+                    <p class="text-sm text-muted truncate">
+                      {{ product.price }}
+                    </p>
+                    <UBadge
+                      v-if="product.comingSoon"
+                      color="neutral"
+                      variant="outline"
+                      size="xs"
+                    >
+                      Coming soon
+                    </UBadge>
+                  </div>
                 </div>
               </div>
 
@@ -141,7 +152,7 @@ useSeoMeta({
                   Details
                 </UButton>
                 <UButton
-                  v-if="product.purchaseUrl"
+                  v-if="product.purchaseUrl && !product.comingSoon"
                   :to="product.purchaseUrl"
                   target="_blank"
                   rel="noopener"

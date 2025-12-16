@@ -3,16 +3,15 @@ slug: affiliate-links-vault
 title: Affiliate Links Vault (200+ Programs)
 description: A paid, curated database of 200+ affiliate programs and partner offers—organized by category, with notes on payouts, approval friction, and who it fits.
 price: "$49"
-purchaseUrl: https://example.com/checkout/affiliate-links-vault
-image: https://ui.nuxt.com/assets/templates/nuxt/starter-light.png
+comingSoon: true
 tags: [affiliate, marketing, growth, database]
 features:
-	- 200+ affiliate programs across SaaS, AI, creator tools, and B2B
-	- Categorized, searchable, and de-duplicated (no junk lists)
-	- Notes on payout model, cookie window, and typical approval friction
-	- “Best for” guidance so you don’t promote mismatched tools
-	- Delivered as a spreadsheet/Notion-ready format
-	- Periodic updates (new programs + dead-link cleanup)
+  - 200+ affiliate programs across SaaS, AI, creator tools, and B2B
+  - Categorized, searchable, and de-duplicated (no junk lists)
+  - Notes on payout model, cookie window, and typical approval friction
+  - “Best for” guidance so you don’t promote mismatched tools
+  - Delivered as a spreadsheet/Notion-ready format
+  - Periodic updates (new programs + dead-link cleanup)
 ---
 
 ## What this is

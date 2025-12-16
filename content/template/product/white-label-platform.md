@@ -3,8 +3,7 @@ slug: white-label-platform
 title: White-Label Platform Template
 description: Launch a branded micro-SaaS fast with Nuxt, content-driven pages, and Vault unlock flows.
 price: "$49"
-purchaseUrl: https://example.com/checkout/white-label-platform
-image: https://ui.nuxt.com/assets/templates/nuxt/starter-light.png
+comingSoon: true
 tags: [white-label, platform, nuxt, content]
 features:
   - Branded landing page and theme application

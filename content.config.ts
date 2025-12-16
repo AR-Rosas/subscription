@@ -69,6 +69,7 @@ export default defineContentConfig({
         title: z.string(),
         description: z.string(),
         price: z.string(),
+        comingSoon: z.boolean().default(false),
         purchaseUrl: z.string().url().optional(),
         image: z.string().url().optional(),
         tags: z.array(z.string()).default([]),
