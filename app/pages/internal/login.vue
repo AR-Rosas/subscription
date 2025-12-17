@@ -45,7 +45,9 @@ function signIn() {
         <div class="flex flex-wrap gap-2">
           <UButton color="primary" @click="signIn">Continue with GitHub</UButton>
           <UButton to="/" color="neutral" variant="soft">Back to site</UButton>
-          <UButton href="/auth/github" color="neutral" variant="ghost">Use full redirect flow</UButton>
+          <UButton to="/auth/github" external target="_self" color="neutral" variant="ghost">
+            Use full redirect flow
+          </UButton>
         </div>
 
         <p class="text-xs text-muted">

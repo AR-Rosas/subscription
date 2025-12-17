@@ -42,6 +42,13 @@ export default defineNuxtConfig({
       githubLogins: (process.env.NUXT_INTERNAL_GITHUB_LOGINS || '')
         .split(',')
         .map(s => s.trim().toLowerCase())
+        .filter(Boolean),
+
+      // Repo allow-list: comma-separated "owner/repo" values.
+      // Mandatory for /internal APIs so GitHub token access stays scoped.
+      allowedRepos: (process.env.NUXT_INTERNAL_ALLOWED_REPOS || '')
+        .split(',')
+        .map(s => s.trim().toLowerCase())
         .filter(Boolean)
     },
 

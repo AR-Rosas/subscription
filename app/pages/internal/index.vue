@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Internal',
-  description: 'Private internal tools.'
+  title: 'Internal • Dashboard',
+  description: 'Tradealink Internal OS / Mini-CRM.'
 })
 
 const { loggedIn, user, session, clear } = useUserSession()
@@ -45,15 +45,16 @@ const { loggedIn, user, session, clear } = useUserSession()
 
       <UCard>
         <div class="flex flex-col gap-3">
-          <h2 class="text-lg font-medium">Planned pages</h2>
+          <h2 class="text-lg font-medium">Internal OS</h2>
           <div class="flex flex-wrap gap-2">
+            <UButton to="/internal/clients" variant="soft" color="primary">Clients</UButton>
             <UButton to="/internal/issues" variant="soft" color="primary">Issues</UButton>
             <UButton to="/internal/projects" variant="soft" color="primary">Projects</UButton>
             <UButton to="/internal/docs" variant="soft" color="primary">Docs</UButton>
             <UButton to="/internal/settings" variant="soft" color="primary">Settings</UButton>
           </div>
           <p class="text-sm text-muted">
-            Next step: use the stored GitHub access token (server-only) to read/edit issues or project items.
+            Source of truth lives in GitHub (Issues + Projects). Nuxt is the UI.
           </p>
         </div>
       </UCard>

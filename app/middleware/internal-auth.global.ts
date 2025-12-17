@@ -11,7 +11,8 @@ export default defineNuxtRouteMiddleware(async (to) => {
   const { loggedIn, ready, fetch, user } = useUserSession()
 
   // Ensure session state is loaded before gating.
-  if (!ready.value) {
+  // In some cases `ready` can be true before the cookie-backed session has been fetched.
+  if (!ready.value || !loggedIn.value) {
     try {
       await fetch()
     } catch {
